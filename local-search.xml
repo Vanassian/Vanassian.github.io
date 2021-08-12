@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>Vanassian</title>
+    <link href="/2021/08/12/xx/"/>
+    <url>/2021/08/12/xx/</url>
+    
+    <content type="html"><![CDATA[<h1 id="目前菜狗一只"><a href="#目前菜狗一只" class="headerlink" title="目前菜狗一只"></a>目前菜狗一只</h1><p>跪拜绍俊巨巨</p><h1 id="目前任务"><a href="#目前任务" class="headerlink" title="目前任务"></a>目前任务</h1><p>1.软件<br>     学习学习单片机，提高调试能力<br>     学c++，python<br>     学学linux<br>2.硬件<br>     学学各种运放<br>     画点系统板<br>     学学电机相关的知识</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>菜狗介绍</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>对于FOC的探索</title>
     <link href="/2021/08/12/%E6%8A%80%E6%9C%AF-1/"/>
     <url>/2021/08/12/%E6%8A%80%E6%9C%AF-1/</url>
@@ -23,17 +42,17 @@
   
   
   <entry>
-    <title>Vanassian</title>
-    <link href="/2021/08/12/xx/"/>
-    <url>/2021/08/12/xx/</url>
+    <title>C语言的复习</title>
+    <link href="/2021/08/12/C%E8%AF%AD%E8%A8%80/"/>
+    <url>/2021/08/12/C%E8%AF%AD%E8%A8%80/</url>
     
-    <content type="html"><![CDATA[<h1 id="目前菜狗一只"><a href="#目前菜狗一只" class="headerlink" title="目前菜狗一只"></a>目前菜狗一只</h1><p>跪拜绍俊巨巨</p><h1 id="目前任务"><a href="#目前任务" class="headerlink" title="目前任务"></a>目前任务</h1><p>1.软件<br>     学习学习单片机，提高调试能力<br>     学c++，python<br>     学学linux<br>2.硬件<br>     学学各种运放<br>     画点系统板<br>     学学电机相关的知识</p>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>上一次使用C语言已经不知道是什么时候了。。。。。。。<br>感觉大部分语法已经忘得差不多了<br>也应该补一补了<br>就当作学习c++的前置课程吧</p></blockquote><h1 id="第一部分–数据类型"><a href="#第一部分–数据类型" class="headerlink" title="第一部分–数据类型"></a>第一部分–数据类型</h1>]]></content>
     
     
     
     <tags>
       
-      <tag>菜狗介绍</tag>
+      <tag>编程</tag>
       
     </tags>
     
