@@ -14,11 +14,11 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="">
+  <meta name="description" content="成长">
   <meta name="author" content="Vanassian">
   <meta name="keywords" content="">
   
-  <title>对于FOC的探索 - Don&#39;t panic</title>
+  <title>Don&#39;t panic</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -163,7 +163,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="对于FOC的探索">
+            <span class="h2" id="subtitle" title="">
               
             </span>
 
@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      7 字
+      1.8k 字
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      18
        分钟
     </span>
   
@@ -225,10 +225,20 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">对于FOC的探索</h1>
+            <h1 style="display: none"></h1>
             
             <div class="markdown-body">
-              <h1 id="供上稚辉君神文"><a href="#供上稚辉君神文" class="headerlink" title="供上稚辉君神文"></a><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/147659820">供上稚辉君神文</a></h1>
+              <p><a name="fK1qB"></a></p>
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1><p><a name="ZVacC"></a></p>
+<h1 id="备赛历程2021年8月12日夜"><a href="#备赛历程2021年8月12日夜" class="headerlink" title="备赛历程2021年8月12日夜"></a>备赛历程2021年8月12日夜</h1><p>   首先就是寒假学习了一些基本的知识，然后把需要的板子都画了一下<del>（只是画了）</del>，最开始采用了供电与其他的部分分离的方案，但是由于最初缺乏经验，没有寻找和解决问题的能力，所以一开始磕磕绊绊的，烧了不少东西，最终有了一块勉强可以用的板子，然后是漫长的等待，因为回来的时候有一版板子忘带了，等快递等了10天（大家千万不要发申通快递，忙的时候要人命）等待的时候去焊接了电驱板，，发现板子一接电就烧驱动芯片，找了十天之后最后发现封装（ir2104与ir2184的引脚不同，不可以通用）选错了，于是重新画了电驱，兴冲冲拿回来按模块焊接测试，一接电又烧了，在仔细对照了封装之后，发现没有问题，于是仔细把数据手册又读了一遍，发现了些许的不同，ir2184的SD引脚要求输入电压最大是逻辑地＋5V，也就是5v，而ir2104没这个限制，它可以达到vcc，也就是我板子上的12v。于又重新画了一版。<br />   这个时候到了主控板，发现主控板的晶振选型不对，把无源晶振买成了有源的，板子上画的是无源的（吐血），然后准备重画一版，而且由于焊接技术的问题，我焊废了好几块板子，焊废了几个芯片。这个时候我的队友提议换芯片，决定采用另一款芯片，我决定不影响队伍进度，直接是使用核心板，然后由于电源板比较费，最后决定废弃这个方案，将电源集中到主控板上，在画好焊接过程中一切安稳，于是这个板子到最后都没有进行更改，只是选用的稳压芯片出现了负载过多降压的问题，最后发觉应该和电感有关，查阅后发现这个电感的额定电流为800mA，而我的DC芯片输出最大电流为3A，更换了电感比较良好，然后过了一段时间，发现又出现了这个问题，对比另一辆车的板子，在外设相符的情况下，没有出现这种问题，于是看了看芯片的厂商，发现贵的那个反而出问题多，果断换成另一个，再没出现过这个问题。<br />   然后到了运放板上，一开始采用了lmv358一级放大的方案，后面才发觉它的增益带宽积其实不足以支持20Khz的电磁波信号放大多少的，会失真，而且在和队友商议一段时间以后，决定换成运放与电感分离的方案。，然后发觉这个方案不是很理想，最后将谐振放大电路放在一个单独的电感板上，采用了gh1.25的接口（记住这玩意，我后头要吐槽），然后第一个比较正确的运放就出现了，可以正常使用，然后开始了其他的改装，观察其他的同学的板子，发现其上一级放大与二级放大中间有一个串联的电容，在查询一些资料并询问同学后，没有得到很好的解释，最后还是尝试画了一个试一试效果，结果完全没法导通，于是最后就放弃了。期间更换了很多的运放芯片，有5种左右吧，然出现了问题，运放芯片经常性的烧毁，在和学长简单的交流后，发现运放输入端其实可以加入保护的，尤其各种运放的输入其实负电压最多是-0.3V，也就是输入过多的可能会烧毁，于是加了钳位保护（期前尝试将整流搬到第一级输入端，发现二极管管压降不允许），奇特的是lm358没有烧毁过（lm358yyds）。然后gh1.25就比较内啥了，队友使用车辆下手比较重（doge），接口很容易松，而且由于焊盘的面积不够大了，焊接过后其实很容易被扯下来，最后由于焊盘被扯掉，我重焊了好几次，后期大部分的问题就是焊盘和接口松了然后接触不良的问题，比较容易解决但是很烦人，以后再也不用这玩意了，主控板的开关也是很令人头疼的问题，多次开关之后就会断掉，后期调车比较频繁，隔几天就坏了，就要更换。<br />  然后等了零件，给直立车用的电驱出了问题，硬件mos管开关的时间问题，导致直立环很软，在行驶过程中很容易坏掉，再经过测量后发现还是有所差距，而且这个量无法进行准确预算，只能多找几种mos管进行测试，最后盯上了新生板的mos管，使用后很不错，但是由于立创没货，只能从新生板上拆了_<strong>（被迫）。</strong><em><br /></em>**  **_以上就是画板子的经历，然后说说队友吧，我组队的都是很强的软件选手，当时做硬件也是觉得自己能力不太够去替代他们做软件，事实也证明了这一点，他们总是会想出一些比较新奇但却又符合规律的想法，然后付诸实践，而且调试能力都很强，因为我个人原因对于进度拖延而不怪罪，和我一起做智能车，实属不易，在此感谢。对于队友间的交流，还是很融洽的，但是由于软硬分的比较开，导致很多时候我说的他们听不明白，他们说的我听不明白，间隔还是比较大的，但是这也更考验了队友间的信任，再次感谢吧。<br><a name="qGBc9"></a></p>
+<h1 id="-1"><a href="#-1" class="headerlink" title=""></a></h1><p><a name="WjgxJ"></a></p>
+<h1 id="-2"><a href="#-2" class="headerlink" title=""></a></h1><p><a name="WfusG"></a></p>
+<h1 id="对实验室的建议（待完善）"><a href="#对实验室的建议（待完善）" class="headerlink" title="对实验室的建议（待完善）"></a>对实验室的建议（待完善）</h1><p>  一个就是例会，我觉得现在的例会可能有点水了，大家大部分只是说说近期干了什么，好像例会只是一个检查，大家说一些事情证明自己没划水，首先我觉得目前智能车各组分的比较开，而公共的知识点大家可能也不太用交流，我觉可以变成大家总结自己的学习内容并应用，然后在例会上简短说明可以应用的方向，并总结在语雀上供大家学习。<br />​</p>
+<p>​<br /><br><a name="Gm4vC"></a></p>
+<h1 id="未来规划"><a href="#未来规划" class="headerlink" title="未来规划"></a>未来规划</h1><p>  还是决定跟着实验室的培训走，然后发觉自己的嵌入式写代码的能力有些欠缺，还是要提高一下，至少能够写一些简单的测试程序去测试板子。<br />  然后跟着自己的兴趣走吧。<br><a name="RbzLE"></a></p>
+<h1 id="-3"><a href="#-3" class="headerlink" title=""></a></h1><p><a name="s7TeH"></a></p>
+<h1 id="-4"><a href="#-4" class="headerlink" title=""></a></h1><p><a name="piyX6"></a></p>
+<h1 id="技术个人总结（13号再补充，累了）"><a href="#技术个人总结（13号再补充，累了）" class="headerlink" title="技术个人总结（13号再补充，累了）"></a>技术个人总结（13号再补充，累了）</h1>
             </div>
             <hr>
             <div>
@@ -237,7 +247,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E8%BD%AF%E7%A1%AC/">软硬</a>
+                      <a class="hover-with-bg" href="/categories/%E6%80%BB%E7%BB%93/">总结</a>
                     
                   </div>
                 
@@ -245,11 +255,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E7%94%B5%E6%9C%BA%E9%A9%B1%E5%8A%A8/">电机驱动</a>
-                    
-                      <a class="hover-with-bg" href="/tags/PCB/">PCB</a>
-                    
-                      <a class="hover-with-bg" href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+                      <a class="hover-with-bg" href="/tags/%E6%80%BB%E7%BB%93/">总结</a>
                     
                   </div>
                 
@@ -266,21 +272,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/08/12/C%E8%AF%AD%E8%A8%80/">
+                      <a href="/2021/08/12/%E6%8A%80%E6%9C%AF-1/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">C语言的复习</span>
+                        <span class="hidden-mobile">对于FOC的探索</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
-                    
-                      <a href="/2021/08/12/Aurora/">
-                        <span class="hidden-mobile"></span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
                     
                   </article>
                 </div>
