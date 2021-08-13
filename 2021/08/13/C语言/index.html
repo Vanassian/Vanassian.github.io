@@ -649,7 +649,45 @@
 </tr>
 </tbody></table>
 <h2 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h2><p>位运算符作用于位，并逐位执行操作。&amp;、 | 和 ^ 的真值表如下所示：</p>
-<p>| p | q | p &amp; q | p | q | p ^ q |<br>| — | — | — | — | — |<br>| 0 | 0 | 0 | 0 | 0 |<br>| 0 | 1 | 0 | 1 | 1 |<br>| 1 | 1 | 1 | 1 | 0 |<br>| 1 | 0 | 0 | 1 | 1 |</p>
+<table>
+<thead>
+<tr>
+<th>p 或 q</th>
+<th>p &amp; q</th>
+<th>p</th>
+<th>q</th>
+<th>p ^ q</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody></table>
 <p>假设如果 A = 60，且 B = 13，现在以二进制格式表示，它们如下所示：<br>A = 0011 1100<br>B = 0000 1101</p>
 <hr>
 <p>A&amp;B = 0000 1100<br>A|B = 0011 1101<br>A^B = 0011 0001<br>~A  = 1100 0011<br>下表显示了 C 语言支持的位运算符。假设变量<strong>A</strong>的值为 60，变量<strong>B</strong>的值为 13，则：</p>
