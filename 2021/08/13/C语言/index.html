@@ -173,8 +173,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-08-12 11:50" pubdate>
-        2021年8月12日 中午
+      <time datetime="2021-08-13 00:00" pubdate>
+        2021年8月13日 凌晨
       </time>
     </span>
   
@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      964 字
+      1.9k 字
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      11
+      21
        分钟
     </span>
   
@@ -241,39 +241,28 @@
 <tr>
 <th>序号</th>
 <th>类型与描述</th>
+<th>基本</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>1</td>
 <td><strong>基本类型：</strong></td>
-</tr>
-<tr>
 <td>它们是算术类型，包括两种类型：整数类型和浮点类型。</td>
-<td></td>
 </tr>
 <tr>
 <td>2</td>
 <td><strong>枚举类型：</strong></td>
-</tr>
-<tr>
 <td>它们也是算术类型，被用来定义在程序中只能赋予其一定的离散整数值的变量。</td>
-<td></td>
 </tr>
 <tr>
 <td>3</td>
 <td><strong>void 类型：</strong></td>
-</tr>
-<tr>
 <td>类型说明符 <em>void</em> 表明没有可用的值。</td>
-<td></td>
 </tr>
 <tr>
 <td>4</td>
 <td><strong>派生类型：</strong></td>
-</tr>
-<tr>
 <td>它们包括：指针类型、数组类型、结构类型、共用体类型和函数类型。</td>
-<td></td>
 </tr>
 </tbody></table>
 <p>数组类型和结构类型统称为聚合类型。函数的类型指的是函数返回值的类型。在本章节接下来的部分我们将介绍基本类型，其他几种类型会在后边几个章节中进行讲解。</p>
@@ -368,33 +357,80 @@
 <tr>
 <th>序号</th>
 <th>类型与描述</th>
+<th>具体</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>1</td>
 <td><strong>函数返回为空</strong></td>
-</tr>
-<tr>
 <td>C 中有各种函数都不返回值，或者您可以说它们返回空。不返回值的函数的返回类型为空。例如 <strong>void exit (int status);</strong></td>
-<td></td>
 </tr>
 <tr>
 <td>2</td>
 <td><strong>函数参数为空</strong></td>
-</tr>
-<tr>
 <td>C 中有各种函数不接受任何参数。不带参数的函数可以接受一个 void。例如 <strong>int rand(void);</strong></td>
-<td></td>
 </tr>
 <tr>
 <td>3</td>
 <td><strong>指针指向 void</strong></td>
-</tr>
-<tr>
 <td>类型为 void * 的指针代表对象的地址，而不是类型。例如，内存分配函数 *<em>void <em>malloc( size_t size );</em></em> 返回指向 void 的指针，可以转换为任何数据类型。</td>
-<td></td>
 </tr>
 </tbody></table>
+<h1 id="变-量"><a href="#变-量" class="headerlink" title="变 量"></a>变 量</h1><p>变量其实只不过是程序可操作的存储区的名称。C 中每个变量都有特定的类型，类型决定了变量存储的大小和布局，该范围内的值都可以存储在内存中，运算符可应用于变量上。<br>变量的名称可以由字母、数字和下划线字符组成。它必须以字母或下划线开头。大写字母和小写字母是不同的，因为 C 是大小写敏感的。基于前一章讲解的基本类型，有以下几种基本的变量类型：</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>char</td>
+<td>通常是一个字节（八位）, 这是一个整数类型。</td>
+</tr>
+<tr>
+<td>int</td>
+<td>整型，4 个字节，取值范围 -2147483648 到 2147483647。</td>
+</tr>
+<tr>
+<td>float</td>
+<td>单精度浮点值。单精度是这样的格式，1位符号，8位指数，23位小数。</td>
+</tr>
+<tr>
+<td><img src="https://cdn.nlark.com/yuque/0/2021/png/2681770/1628841834762-28b0e9ab-cda4-4ab6-9a1e-67d71ca21ad4.png#clientId=u37333e03-257d-4&from=paste&id=u2309fc56&margin=%5Bobject%20Object%5D&originHeight=75&originWidth=590&originalType=url&ratio=1&status=done&style=none&taskId=ua6a45f1e-a8b6-4b8d-912b-65028f5baed" srcset="/img/loading.gif" lazyload></td>
+<td></td>
+</tr>
+<tr>
+<td>double</td>
+<td>双精度浮点值。双精度是1位符号，11位指数，52位小数。</td>
+</tr>
+<tr>
+<td><img src="https://cdn.nlark.com/yuque/0/2021/png/2681770/1628841834691-c7724710-d54c-4152-9851-07e1864fd56f.png#clientId=u37333e03-257d-4&from=paste&id=u8f3dff3e&margin=%5Bobject%20Object%5D&originHeight=125&originWidth=618&originalType=url&ratio=1&status=done&style=none&taskId=u7bd1c2fa-1b70-4121-82ae-9a12ffd3432" srcset="/img/loading.gif" lazyload></td>
+<td></td>
+</tr>
+<tr>
+<td>void</td>
+<td>表示类型的缺失。</td>
+</tr>
+</tbody></table>
+<p>C 语言也允许定义各种其他类型的变量，比如枚举、指针、数组、结构、共用体等等，这将会在后续的章节中进行讲解，本章节我们先讲解基本变量类型。</p>
+<h2 id="C-中的变量定义"><a href="#C-中的变量定义" class="headerlink" title="C 中的变量定义"></a>C 中的变量定义</h2><p>变量定义就是告诉编译器在何处创建变量的存储，以及如何创建变量的存储。变量定义指定一个数据类型，并包含了该类型的一个或多个变量的列表，如下所示：<br>type variable_list;<br>在这里，<strong>type</strong> 必须是一个有效的 C 数据类型，可以是 char、w_char、int、float、double 或任何用户自定义的对象，<strong>variable_list</strong> 可以由一个或多个标识符名称组成，多个标识符之间用逗号分隔。下面列出几个有效的声明：<br>  int    i, j, k;<br>  char   c, ch;<br>  float  f, salary;<br>  double d;<br>行 <strong>int i, j, k;</strong> 声明并定义了变量 i、j 和 k，这指示编译器创建类型为 int 的名为 i、j、k 的变量。<br>变量可以在声明的时候被初始化（指定一个初始值）。初始化器由一个等号，后跟一个常量表达式组成，如下所示：<br>  type variable_name = value;</p>
+<h2 id="C-中的变量声明"><a href="#C-中的变量声明" class="headerlink" title="C 中的变量声明"></a>C 中的变量声明</h2><p>变量声明向编译器保证变量以指定的类型和名称存在，这样编译器在不需要知道变量完整细节的情况下也能继续进一步的编译。变量声明只在编译时有它的意义，在程序连接时编译器需要实际的变量声明。<br>变量的声明有两种情况：</p>
+<ul>
+<li><p>1、一种是需要建立存储空间的。例如：int a 在声明的时候就已经建立了存储空间。</p>
+</li>
+<li><p>2、另一种是不需要建立存储空间的，通过使用extern关键字声明变量名而不定义它。 例如：extern int a 其中变量 a 可以在别的文件中定义的。</p>
+</li>
+<li><p>除非有extern关键字，否则都是变量的定义。</p>
+<p>  extern int i; //声明，不是定义<br>  int i; //声明，也是定义</p>
+<h2 id="C-中的左值（Lvalues）和右值（Rvalues）"><a href="#C-中的左值（Lvalues）和右值（Rvalues）" class="headerlink" title="C 中的左值（Lvalues）和右值（Rvalues）"></a>C 中的左值（Lvalues）和右值（Rvalues）</h2></li>
+</ul>
+<p>C 中有两种类型的表达式：</p>
+<ol>
+<li><strong>左值（lvalue）：</strong>指向内存位置的表达式被称为左值（lvalue）表达式。左值可以出现在赋值号的左边或右边。</li>
+<li><strong>右值（rvalue）：</strong>术语右值（rvalue）指的是存储在内存中某些地址的数值。右值是不能对其进行赋值的表达式，也就是说，右值可以出现在赋值号的右边，但不能出现在赋值号的左边。</li>
+</ol>
+<p>变量是左值，因此可以出现在赋值号的左边。数值型的字面值是右值，因此不能被赋值，不能出现在赋值号的左边。</p>
 
             </div>
             <hr>
@@ -429,18 +465,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/08/12/Aurora/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">智能车总结-Aurora队</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/08/12/xx/">
-                        <span class="hidden-mobile">Vanassian</span>
+                      <a href="/2021/08/12/Aurora/">
+                        <span class="hidden-mobile">智能车总结-Aurora队</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
