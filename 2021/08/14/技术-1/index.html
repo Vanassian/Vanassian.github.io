@@ -173,8 +173,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-08-12 11:50" pubdate>
-        2021年8月12日 中午
+      <time datetime="2021-08-14 12:50" pubdate>
+        2021年8月14日 下午
       </time>
     </span>
   
@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      7 字
+      283 字
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      2
        分钟
     </span>
   
@@ -228,7 +228,22 @@
             <h1 style="display: none">对于FOC的探索</h1>
             
             <div class="markdown-body">
-              <h1 id="供上稚辉君神文"><a href="#供上稚辉君神文" class="headerlink" title="供上稚辉君神文"></a><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/147659820">供上稚辉君神文</a></h1>
+              <h1 id="供上稚辉君神文"><a href="#供上稚辉君神文" class="headerlink" title="供上稚辉君神文"></a><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/147659820">供上稚辉君神文</a></h1><blockquote><p>在简单肝完了C语言的基础语法后，主要精力终于要回归硬件（bushi）了<br>FOC的控制算法还是比较难受的，前期没有很好的单片机基础（最近熬夜会补上的）<br>硬件电路就是单片机控制三相逆变器输出三相的正弦波给电机，然后通过采样电路进行采流控制？<br>看起来似乎很简单，但是。。。。。。<br>总的来说，我的FOC之路开始了（好唉）</p>
+</blockquote>
+
+<h1 id="比较难受的硬件部分"><a href="#比较难受的硬件部分" class="headerlink" title="比较难受的硬件部分"></a>比较难受的硬件部分</h1><blockquote><p>总的来说，FOC的硬件部分不是特别难，但是考虑到京都的问题，必要的措施就很多了。<br>基本上，我将硬件部分分为以下几个方面： </p>
+<ol>
+<li>电机的分类选型</li>
+<li>三相逆变器电路的搭设</li>
+<li>采样部分的完善</li>
+<li>电源的部分</li>
+</ol>
+</blockquote>
+
+<h2 id="电机"><a href="#电机" class="headerlink" title="电机"></a>电机</h2><blockquote><p>之前一直没关注过电机，因为比赛的电机都是固定的<br>今天首先就是看看这玩意了</p>
+</blockquote>
+
+<h2 id="三相逆变器"><a href="#三相逆变器" class="headerlink" title="三相逆变器"></a>三相逆变器</h2><h2 id="采样部分"><a href="#采样部分" class="headerlink" title="采样部分"></a>采样部分</h2><h1 id="更为难受的软件编程部分"><a href="#更为难受的软件编程部分" class="headerlink" title="更为难受的软件编程部分"></a>更为难受的软件编程部分</h1><h2 id="stm32CubeMax"><a href="#stm32CubeMax" class="headerlink" title="stm32CubeMax???"></a>stm32CubeMax???</h2><h2 id="控制思路"><a href="#控制思路" class="headerlink" title="控制思路"></a>控制思路</h2>
             </div>
             <hr>
             <div>
@@ -266,15 +281,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/08/12/xx/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Vanassian</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2021/08/13/C%E8%AF%AD%E8%A8%80/">
+                        <span class="hidden-mobile">C语言的复习</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
