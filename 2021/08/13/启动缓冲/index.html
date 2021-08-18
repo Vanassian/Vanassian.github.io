@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.1k 字
+      703 字
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      12
+      7
        分钟
     </span>
   
@@ -245,13 +245,13 @@
 <li>R4 和 R5 的作用是防止 MOS 管自激振荡，要求 R4、R5lt;&lt;R3，R4 取值一般为 10～50 欧姆之间，R5 一般为 2K 欧姆；</li>
 <li>嵌位二极管 D3 的作用是保护 MOS 管 Q1 的栅 - 源极不被高压击穿；D2 的作用是在 MOS 管导通后对 R2、C1 构成的防抖动延时电路和 R3、C2 构成的上电斜率控制电路进行隔离，防止 MOS 栅极充电过程受 C1 的影响。</li>
 </ol>
-<p>假设 MOS 管 Q1 的栅 - 源极间的寄生电容为 Cgs，栅 - 漏极间的寄生电容为 Cgd，漏 - 源极间的寄生电容为 Cds，栅 - 漏极外部并联了电容 C2 (C2gt;&gt;Cgd)，所以栅 - 漏极的总电容 C’gd=C2+ Cgd，由于相对于 C2 来说，Cgd 的容值几乎可忽略不计，所以 C’gd≈C2，MOS 管栅极的开启电压为 Vth，正常工作时，MOS 管栅源电压为 Vw(此电压等于稳压管 D3 的嵌位电压)，电容 C1 充电的时间常数 t=(R1//R2//R3)C1，由于 R3 通常比 R1、R2 大很多，所以 t≈(R1//R2)C1。</p>
-<p>下面分三个阶段来分析上述电压缓启动电路的工作原理：</p>
-<p>第一阶段：-48V 电源对 C1 充电，充电公式如下。<br>Uc＝48<em>R1/(R1+R2)[1-exp(-T/t)]，其中 T 是电容 C1 电压上升到 Uc 的时间，时间常数 t＝(R1//R2)C1。所以，从上电到 MOS 管开启所需要的时间为：Tth=-t</em>ln[1-(Uc*(R1+R2)/(48*R1))]</p>
-<p>第二阶段：MOS 管开启后，漏极电流开始增大，其变化速度跟 MOS 管的跨导和栅源电压变化率成正比，具体关系为：dIdrain/dt = gfm *dVgs/dt，其中 gfm 为 MOS 管的跨导，是一个固定值，Idrain 为漏极电流，Vgs 为 MOS 管的栅源电压，此期间体现为栅源电压对漏源电流的恒定控制，MOS 管被归纳为压控型器件也是由此而来的。</p>
-<p>第三阶段：当漏源电流 Idrain 达到最大负载电流时，漏源电压也达到饱和，同时，栅源电压进入平台期，设电压幅度为 Vplt。由于这段时间内漏源电流 Ids 保持恒定，栅源电压 Vplt=Vth+(Ids/gfm)，同时，由于固定的栅源电压使栅极电流全部通过反馈电容 C’gd，则栅极电流为 Ig=(Vw-Vplt)/(R3+R5)，由于 R5 相对于 R3 可以忽略不计，所以 Ig≈(Vw-Vplt)/R3。因为栅极电流 Ig≈Icgd，所以，Icgd=Cgd<em>dVgd/dt。由于栅源电压在这段时间内保持恒定，所以栅源电压和漏源电压的变化率相等。故有：dVds/dt=dVgd/dt=(Vw-Vplt)/(R3</em>C2)。</p>
-<p>由此公式可以得知，漏源电压变化斜率与 R3<em>C2的值有关，对于负载恒定的系统，只要控制住 R3</em>C2 的值，就能控制住热插拔冲击电流的上升斜率。</p>
-<h2 id="此处留白，待我学习一下正反接都可以通路的电路"><a href="#此处留白，待我学习一下正反接都可以通路的电路" class="headerlink" title="此处留白，待我学习一下正反接都可以通路的电路"></a>此处留白，待我学习一下正反接都可以通路的电路</h2><h1 id="过流保护（17号）"><a href="#过流保护（17号）" class="headerlink" title="过流保护（17号）"></a>过流保护（17号）</h1><h1 id="过压保护（18号）"><a href="#过压保护（18号）" class="headerlink" title="过压保护（18号）"></a>过压保护（18号）</h1>
+<p>过程：</p>
+<h2 id="此处留白，待我学习一下正反接都可以通路的电路"><a href="#此处留白，待我学习一下正反接都可以通路的电路" class="headerlink" title="此处留白，待我学习一下正反接都可以通路的电路"></a>此处留白，待我学习一下正反接都可以通路的电路</h2><h1 id="过流保护（17号）"><a href="#过流保护（17号）" class="headerlink" title="过流保护（17号）"></a>过流保护（17号）</h1><h1 id="欠过压保护（18号）"><a href="#欠过压保护（18号）" class="headerlink" title="欠过压保护（18号）"></a>欠过压保护（18号）</h1><h2 id="一个非常简单的保护"><a href="#一个非常简单的保护" class="headerlink" title="一个非常简单的保护"></a>一个非常简单的保护</h2><p><img src="http://image1.bubuko.com/info/202003/20200319170312838954.png" srcset="/img/loading.gif" lazyload></p>
+<p>当电源电压低于24V时，三极管Q2实际不会导通（基极和发射极同电位），这时选择的pmos达到导通条件，导通。<br>当电源高于24V时，Q2的基极和发射极达到阈值电压，导通，这时Q1的源极和栅极同电位，不可能导通。</p>
+<h2 id="TVS二极管"><a href="#TVS二极管" class="headerlink" title="TVS二极管"></a>TVS二极管</h2><p>这个不用多说，选好型号，别像我，直接冒烟了</p>
+<h2 id="电压检测IC"><a href="#电压检测IC" class="headerlink" title="电压检测IC"></a>电压检测IC</h2><p><img src="!%5B%5D(http://image1.bubuko.com/info/202003/20200319170312838954.png" srcset="/img/loading.gif" lazyload></p>
+<p>HT7050A，是一个5V电压检测的IC，VDD小于5V的时候，输出低电平，大于5V的时候，输出高阻抗。所以，结合R9跟R6的分压电路，当输出为5.5V时，U3的VDD为5V，当电压再高的时候，就输出高阻抗，关断MOS，切断电源。</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2>
             </div>
             <hr>
             <div>
