@@ -234,10 +234,9 @@
 
 <h1 id="防反接及缓冲启动（14号）"><a href="#防反接及缓冲启动（14号）" class="headerlink" title="防反接及缓冲启动（14号）"></a>防反接及缓冲启动（14号）</h1><h2 id="二极管防反接"><a href="#二极管防反接" class="headerlink" title="二极管防反接"></a>二极管防反接</h2><p>最基本的当然串联二极管了，但是串联二极管要保证的电路不太满足一些电路的要求而且二极管的发热功率会很大（转念一想，这不就是我想要的过流保护嘛，不过还是要看二极管烧坏之后是什么状态，如果是断路或许可行）</p>
 <h2 id="mos管防反接"><a href="#mos管防反接" class="headerlink" title="mos管防反接"></a>mos管防反接</h2><p>之后是比较常用的mos管防反接<br>比较常使用的是nmos，因为其导通电阻会小一点<br><img src="http://image1.bubuko.com/info/202003/20200319170312838954.png" srcset="/img/loading.gif" lazyload><br><img src="http://image1.bubuko.com/info/202003/20200319170312793054.png" srcset="/img/loading.gif" lazyload></p>
-<h2 id="缓启动电路"><a href="#缓启动电路" class="headerlink" title="缓启动电路"></a>缓启动电路</h2><hr>
-<p>一个重要的点就是利用米勒平台<br>在这里把链接放在这</p>
-<h3 id="米勒平台-（https-www-emakerzone-com-test-comment-info-467-1）"><a href="#米勒平台-（https-www-emakerzone-com-test-comment-info-467-1）" class="headerlink" title="[米勒平台]（https://www.emakerzone.com/test_comment_info/467/1）"></a>[米勒平台]（<a target="_blank" rel="noopener" href="https://www.emakerzone.com/test_comment_info/467/1%EF%BC%89">https://www.emakerzone.com/test_comment_info/467/1）</a></h3><hr>
-<p>下面应用<br>！<a href="/img/dianlu1/1.png"></a></p>
+<h2 id="缓启动电路"><a href="#缓启动电路" class="headerlink" title="缓启动电路"></a>缓启动电路</h2><blockquote><p>一个重要的点就是利用米勒平台<br>在这里把链接放在这<br><a target="_blank" rel="noopener" href="https://www.emakerzone.com/test_comment_info/467/1">米勒平台</a></p>
+</blockquote>
+<p>下面应用<br><img src="/img/dianlu1/1.png" srcset="/img/loading.gif" lazyload></p>
 <ol>
 <li>D1 是嵌位二极管，防止输入电压过大损坏后级电路；</li>
 <li>R2 和 C1 的作用是实现防抖动延时功能，实际应用中 R2 一般选 20K 欧姆，C1 选 4.7uF 左右；</li>
