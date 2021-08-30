@@ -234,11 +234,11 @@
 
 
 <blockquote><p>总的来说，FOC的硬件部分不是特别难，但是考虑精度的问题，必要的手段就很多了<br>基本上，我将其分为以下几个方面： </p>
-<p><img src="/img/dianlu1/FOC/1.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/img/FOC/1.png" srcset="/img/loading.gif" lazyload></p>
 </blockquote>
 
 <h1 id="比较不难受的硬件部分"><a href="#比较不难受的硬件部分" class="headerlink" title="比较不难受的硬件部分"></a>比较不难受的硬件部分</h1><h2 id="电源电路"><a href="#电源电路" class="headerlink" title="电源电路"></a>电源电路</h2><p>目前已经确定的是至少12V的输入，具体电路还要看其他元件的选型。</p>
-<h2 id="控制电路"><a href="#控制电路" class="headerlink" title="控制电路"></a>控制电路</h2><p>决定采用是stm32f103rct6的芯片，价格适中，接口足够，性能不错，还可以用cubemx。<br>原先要使用MM32F3277的，最后放弃了，感觉不是很需要，过大了。<br>隔离芯片就采用我一直使用的SN罢了<br>电桥驱动是我一直在考虑的，如果说要配死区时间的话，还是很头疼的，所以决定ir2104代表的一批芯片（ir太贵了，立创都13了，无语子）<br><img src="/img/dianlu1/FOC/2.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="控制电路"><a href="#控制电路" class="headerlink" title="控制电路"></a>控制电路</h2><p>决定采用是stm32f103rct6的芯片，价格适中，接口足够，性能不错，还可以用cubemx。<br>原先要使用MM32F3277的，最后放弃了，感觉不是很需要，过大了。<br>隔离芯片就采用我一直使用的SN罢了<br>电桥驱动是我一直在考虑的，如果说要配死区时间的话，还是很头疼的，所以决定ir2104代表的一批芯片（ir太贵了，立创都13了，无语子）<br><img src="/img/FOC/2.png" srcset="/img/loading.gif" lazyload alt="贵的离谱，便宜的爱烧"></p>
 <h2 id="三相逆变器"><a href="#三相逆变器" class="headerlink" title="三相逆变器"></a>三相逆变器</h2><h2 id="采样部分"><a href="#采样部分" class="headerlink" title="采样部分"></a>采样部分</h2><h2 id="电机选型"><a href="#电机选型" class="headerlink" title="电机选型"></a>电机选型</h2><h1 id="更为难受的软件编程部分"><a href="#更为难受的软件编程部分" class="headerlink" title="更为难受的软件编程部分"></a>更为难受的软件编程部分</h1><h2 id="stm32CubeMax"><a href="#stm32CubeMax" class="headerlink" title="stm32CubeMax???"></a>stm32CubeMax???</h2><h2 id="控制思路"><a href="#控制思路" class="headerlink" title="控制思路"></a>控制思路</h2><h2 id="外壳设计"><a href="#外壳设计" class="headerlink" title="外壳设计"></a>外壳设计</h2>
             </div>
             <hr>
