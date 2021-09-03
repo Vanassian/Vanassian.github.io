@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      598 字
+      776 字
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      6
+      8
        分钟
     </span>
   
@@ -232,17 +232,17 @@
 </blockquote>
 
 
-
 <blockquote><p>总的来说，FOC的硬件部分不是特别难，但是考虑精度的问题，必要的手段就很多了<br>基本上，我将其分为以下几个方面： </p>
 <p><img src="/img/FOC/1.png" srcset="/img/loading.gif" lazyload></p>
 </blockquote>
 
-<h1 id="比较不难受的硬件部分"><a href="#比较不难受的硬件部分" class="headerlink" title="比较不难受的硬件部分"></a>比较不难受的硬件部分</h1><h2 id="GET新技能"><a href="#GET新技能" class="headerlink" title="GET新技能"></a><a href="/img/FOC/1.pdf">GET新技能</a></h2><h2 id="电源电路"><a href="#电源电路" class="headerlink" title="电源电路"></a>电源电路</h2><p>目前已经确定的是至少12V的输入，具体电路还要看其他元件的选型。</p>
-<h2 id="控制电路"><a href="#控制电路" class="headerlink" title="控制电路"></a>控制电路</h2><p>决定采用是stm32f103rct6（c8t6足够了）的芯片，价格适中，接口足够，性能不错，还可以用cubemx。<br>原先要使用MM32F3277的，最后放弃了，感觉不是很需要，过大了。<br>隔离芯片就采用我一直使用的SN罢了<br>电桥驱动是我一直在考虑的，如果说要配死区时间的话，还是很头疼的，所以决定ir2104代表的一批芯片（ir太贵了，立创都13了，无语子）<br><img src="/img/FOC/2.png" srcset="/img/loading.gif" lazyload alt="贵的离谱，便宜的爱烧"></p>
-<h2 id="三相逆变器"><a href="#三相逆变器" class="headerlink" title="三相逆变器"></a>三相逆变器</h2><p>看了稚辉君的ctrl-FOC-lite，发现人家使用了TI的DRV8313PWP，是我唐突了，30元的售价将一个三相逆变桥搭了进去，不过只有3A的过流能力。(很省空间)<br><a target="_blank" rel="noopener" href="https://www.ti.com.cn/product/cn/DRV8313">好秀(芯片链接)</a><br>最后决定，自己搭</p>
+<h1 id="目前进度"><a href="#目前进度" class="headerlink" title="目前进度"></a>目前进度</h1><p>9.2日完成电路板绘制与元器件采购<br><img src="/img/FOC/3.png" srcset="/img/loading.gif" lazyload alt="电路板"></p>
+<h1 id="比较不难受的硬件部分"><a href="#比较不难受的硬件部分" class="headerlink" title="比较不难受的硬件部分"></a>比较不难受的硬件部分</h1><h2 id="GET新技能"><a href="#GET新技能" class="headerlink" title="GET新技能"></a><a href="/img/FOC/1.pdf">GET新技能</a></h2><h2 id="电源电路"><a href="#电源电路" class="headerlink" title="电源电路"></a>电源电路</h2><p>目前已经确定的是至少12V的输入，具体电路还要看其他元件的选型。<br><img src="/img/FOC/5.png" srcset="/img/loading.gif" lazyload alt="电源电路"><br>5v电源使用了xl4005开关电源，可供给最高5A的输出电流.<br>12V采用了B0512的电源。REF电源使用了ams的1.5V固定输出的LDO。<br>参考稚辉君的做法，没有独立的3.3v数字输出，采用零欧电阻进行隔离。</p>
+<h2 id="控制电路"><a href="#控制电路" class="headerlink" title="控制电路"></a>控制电路</h2><p>决定采用是stm32f103rct6（c8t6足够了）的芯片，价格适中，接口足够，性能不错，还可以用cubemx。<br>原先要使用MM32F3277的，最后放弃了，感觉不是很需要，过大了。<br>隔离芯片就采用我一直使用的SN罢了<br>电桥驱动是我一直在考虑的，如果说要配死区时间的话，还是很头疼的，所以决定ir2104代表的一批芯片（ir太贵了，立创都13了，无语子）<br><img src="/img/FOC/2.png" srcset="/img/loading.gif" lazyload alt="贵的离谱，便宜的爱烧"><br><img src="/img/FOC/4.png" srcset="/img/loading.gif" lazyload alt="主控部分"><br>采用了c8t6的主控芯片，向外引出通讯接口（uart，can，spi），其中can通信使用了TI公司的SN65HVD230芯片，并且外接了oled的电路。</p>
+<h2 id="三相逆变器"><a href="#三相逆变器" class="headerlink" title="三相逆变器"></a>三相逆变器</h2><p>看了稚辉君的ctrl-FOC-lite，发现人家使用了TI的DRV8313PWP，是我唐突了，30元的售价将一个三相逆变桥搭了进去，不过只有3A的过流能力。(很省空间)<br><a target="_blank" rel="noopener" href="https://www.ti.com.cn/product/cn/DRV8313">好秀(芯片链接)</a><br>最后决定，自己搭<br><img src="/img/FOC/6.png" srcset="/img/loading.gif" lazyload alt="三相电路"><br>ir2104驱动的NCE4080K构成的三相逆变器。</p>
 <h2 id="采样部分"><a href="#采样部分" class="headerlink" title="采样部分"></a>采样部分</h2><hr>
 <h3 id="FOC中的电流采样"><a href="#FOC中的电流采样" class="headerlink" title="FOC中的电流采样"></a><a target="_blank" rel="noopener" href="https://great.blog.csdn.net/article/details/104081421">FOC中的电流采样</a></h3><p>之前涉猎过一点点电流采样的知识，简单来说分两部分，高端采集和低端采集，低端采集呢电路比较简单，用运放直接搭就行了，不过这里有个点，就是低端电流检测的采样电阻是低温漂的高精密电阻，并且采样电路的接法采用<a target="_blank" rel="noopener" href="https://blog.csdn.net/geek_monkey/article/details/104856007">达尔文接法</a>，为了避免引入噪声，建低端加入0殴电阻隔离（会使测量有一部分不稳）。</p>
-<p>最后决定采用万能的LM358进行操作。</p>
+<p>最后决定采用万能的LM358进行操作。<br><a href="">关于电流双向检测</a><br><img src="/img/FOC/7.png" srcset="/img/loading.gif" lazyload alt="电路双向检测"><br>采样电阻采用了低温漂的大号采样电阻，也使用了达尔文接法。</p>
 <hr>
 <h2 id="电机选型"><a href="#电机选型" class="headerlink" title="电机选型"></a>电机选型</h2><h1 id="更为难受的软件编程部分"><a href="#更为难受的软件编程部分" class="headerlink" title="更为难受的软件编程部分"></a>更为难受的软件编程部分</h1><h2 id="stm32CubeMax"><a href="#stm32CubeMax" class="headerlink" title="stm32CubeMax???"></a>stm32CubeMax???</h2><h2 id="控制思路"><a href="#控制思路" class="headerlink" title="控制思路"></a>控制思路</h2><h2 id="外壳设计"><a href="#外壳设计" class="headerlink" title="外壳设计"></a>外壳设计</h2>
             </div>
